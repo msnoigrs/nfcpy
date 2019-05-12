@@ -627,7 +627,7 @@ class Device(device.Device):
             return [106 << i for i in range(6)].index(int(brty[:-1]))
 
         def framing(brty):
-            return {'A': 0b00, 'B': 0b11, 'F': 0b10}[brty[-1:]]
+            return {b'A': 0b00, b'B': 0b11, b'F': 0b10}[brty[-1:]]
 
         # Set bitrate and modulation type for send and receive.
         acm = target.atr_res and not (target.sens_res or target.sensf_res)
